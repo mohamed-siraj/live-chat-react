@@ -2,14 +2,15 @@ import React from "react"
 
 type TLabel = {
     labelName: string,
-    error: boolean
-}
+    error: any,
+    customClass?: string
+};
 
-const Label: React.FunctionComponent<TLabel> = ({ labelName, error }) => {
+const Label: React.FunctionComponent<TLabel> = ({ labelName, error, customClass }) => {
 
     return (<label
         htmlFor={labelName}
-        className={`block font-bold text-sm mb-2 ${error ? "text-red-400" : "text-purple-400"}`}
+        className={`block text-sign-in-purple mb-2 ${customClass} ${error ? "text-red-400" : "text-purple-400"}`}
     >
         {labelName}
     </label>)
