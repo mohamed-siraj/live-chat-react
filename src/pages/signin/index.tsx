@@ -15,8 +15,18 @@ class SignIn extends React.Component {
                 </div>
                 <div className="bg-[#d1d5db] p-1.5"></div>
                 <div className="rounded-r-2xl shadow-2xl bg-white p-8 ">
-                    <div className=" fixed bg-gradient-to-r from-purple-800 p-3 -ml-11 ">
+                    <div className="fixed bg-gradient-to-r from-purple-800 to-blue-500 p-3 -ml-11 rounded-r-3xl">
                         <p className="text-white text-2xl font-semibold font-sign-in-display"> Welcome Back </p>
+                    </div>
+                    <div className="mt-20">
+                        <p className="text-purple-800 mt-7 sm:text-sm md:text-2xl font-normal ">Login your account</p>
+                        <div className="">
+                            <form>
+
+                                <input className="block w-full bg-transparent outline-none border-b-2 py-2 px-4  placeholder-white focus:bg-white" />
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
