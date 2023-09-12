@@ -4,7 +4,7 @@ import './scss/index.scss';
 import {
   RouterProvider,
 } from "react-router-dom";
-import router from '../src/routes';
+import router from './routes';
 import reportWebVitals from './reportWebVitals';
 
 /**
