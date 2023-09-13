@@ -10,7 +10,7 @@ const Label: React.FunctionComponent<TLabel> = ({ labelName, error, customClass 
 
     return (<label
         htmlFor={labelName}
-        className={`block text-sign-in-purple mb-2 ${customClass} ${error ? "text-red-400" : "text-purple-400"}`}
+        className={`block ${customClass} ${error ? "text-red-800" : "text-purple-800"}`}
     >
         {labelName}
     </label>)
