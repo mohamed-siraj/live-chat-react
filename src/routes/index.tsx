@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import SignIn from "../pages/signin";
 import SignUp from "../pages/signup";
+import ForgotPassword from "../pages/forgot-password";
 
 /**
  * create routes
@@ -15,8 +16,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/sign-up",
-        index: true,
         element: <SignUp />
+    },
+    {
+        path: "/forgot-password",
+        element: <ForgotPassword />
     },
 ]);
 

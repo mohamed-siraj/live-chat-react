@@ -71,7 +71,9 @@ const SignIn: React.FunctionComponent = () => {
                                 </Link>
                             </div>
                             <div className="text-center mt-4">
-                                <p className="text-purple-700 text-sm underline cursor-pointer">Forgot Password?</p>
+                                <Link to={`/forgot-password`}>
+                                    <p className="text-purple-700 text-sm underline cursor-pointer">Forgot Password?</p>
+                                </Link>
                             </div>
                         </form>
                     </div>
