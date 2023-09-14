@@ -9,7 +9,6 @@ type TLabel = {
 const Label: React.FunctionComponent<TLabel> = ({ labelName, error, customClass }) => {
 
     return (<label
-        htmlFor={labelName}
         className={`block ${customClass} ${error ? "text-red-800" : "text-purple-800"}`}
     >
         {labelName}

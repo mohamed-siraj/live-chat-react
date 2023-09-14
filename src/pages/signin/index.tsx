@@ -6,6 +6,7 @@ import * as yup from "yup"
 import Label from "components/forms/label";
 import Input from "components/forms/input";
 import RoundBtn from "components/buttons/roundBtn";
+import SpinnerBtn from "components/buttons/spinnerBtn";
 
 type TSignIn = {
     username: string,
@@ -60,7 +61,14 @@ const SignIn: React.FunctionComponent = () => {
                             <Label labelName="Password" error={errors.password} customClass="sm:text-sm mt-2 md:text-lg font-semibold font-sign-in-display" />
                             <Input placeholder="Password" name="password" error={errors.password} type='password' register={register} required={true} />
                             <div className="text-center mt-4">
-                                <RoundBtn name="Login" type='submit'/>
+                                <RoundBtn name="Login" type='submit' />
+                                {/* <SpinnerBtn/> */}
+                            </div>
+                            <div className="text-center mt-4">
+                                <p className="text-purple-700 text-sm cursor-pointer">Create Account</p>
+                            </div>
+                            <div className="text-center mt-4">
+                                <p className="text-purple-700 text-sm underline cursor-pointer">Forgot Password?</p>
                             </div>
                         </form>
                     </div>
