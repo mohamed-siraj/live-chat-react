@@ -2,15 +2,12 @@ import React from "react"
 import { FloraStretchingBallerina } from "svg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
+import RoundBtn from "components/buttons/roundBtn";
 import Label from "components/forms/label";
 import Input from "components/forms/input";
-import RoundBtn from "components/buttons/roundBtn";
-import { Link } from "react-router-dom";
 
-type TSignUpForm = {
-    username: string,
-    email: string,
+type TResetPasswordForm = {
     password: string,
     confirm_password: string
 };
@@ -21,26 +18,24 @@ type TSignUpForm = {
 
 const schema = yup
     .object({
-        username: yup.string().required(),
-        email: yup.string().email().required(),
         password: yup.string().min(6).max(12).required(),
         confirm_password: yup.string().label('confirm password').required().oneOf([yup.ref('password'), ''], 'Passwords must match')
     }).required()
 
 
-const SignUp: React.FunctionComponent = () => {
+const ResetPassword: React.FunctionComponent = () => {
 
     /**
      * form handle hooks
      */
-    const { register, handleSubmit, formState: { errors } } = useForm<TSignUpForm>({ resolver: yupResolver(schema) });
+    const { register, handleSubmit, formState: { errors } } = useForm<TResetPasswordForm>({ resolver: yupResolver(schema) });
 
     /**
-     * @type {TSignUpForm}
+     * @type {TResetPasswordForm}
      * @param data 
-     * @description submit user credentials to signUp 
+     * @description submit user credentials to reset password 
      */
-    const onSubmit: SubmitHandler<TSignUpForm> = (data) => {
+    const onSubmit: SubmitHandler<TResetPasswordForm> = (data) => {
         console.log(data)
     }
 
@@ -54,24 +49,20 @@ const SignUp: React.FunctionComponent = () => {
             </div>
             <div className="bg-[#d1d5db] p-1.5"></div>
             <div className="rounded-r-2xl shadow-2xl bg-white p-8 ">
-                <div className="px-6">
-                    <p className="text-purple-800 sm:text-sm md:text-2xl font-normal text-center">Create Account</p>
+                <div className="fixed bg-gradient-to-r from-purple-800 to-blue-500 p-3 -ml-11 rounded-r-3xl">
+                    <p className="text-white text-2xl font-semibold font-sign-in-display"> Welcome Back </p>
+                </div>
+                <div className="mt-24 px-6">
+                    <p className="text-purple-800 mt-7 sm:text-sm md:text-2xl font-normal text-center">Reset Password </p>
                     <div className="mt-5">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <Label labelName="Username" error={errors.username} customClass="sm:text-sm md:text-lg font-semibold font-sign-in-display" />
-                            <Input placeholder="Username" name="username" error={errors.username} type='text' register={register} required={true} />
-                            <Label labelName="Email" error={errors.email} customClass="sm:text-sm mt-2 md:text-lg font-semibold font-sign-in-display" />
-                            <Input placeholder="Email" name="email" error={errors.email} type='email' register={register} required={true} />
                             <Label labelName="Password" error={errors.password} customClass="sm:text-sm mt-2 md:text-lg font-semibold font-sign-in-display" />
                             <Input placeholder="Password" name="password" error={errors.password} type='password' register={register} required={true} />
                             <Label labelName="Confirm password" error={errors.confirm_password} customClass="sm:text-sm mt-2 md:text-lg font-semibold font-sign-in-display" />
                             <Input placeholder="Confirm password" name="confirm_password" error={errors.confirm_password} type='password' register={register} required={true} />
                             <div className="text-center mt-4">
-                                <RoundBtn name="Create" type='submit' />
+                                <RoundBtn name="Reset" type='submit' />
                                 {/* <SpinnerBtn/> */}
-                            </div>
-                            <div className="text-center mt-4">
-                                <p className="text-purple-700 text-sm">Already have an account.? <Link to={'/'}><span className="font-bold">Login</span></Link></p>
                             </div>
                         </form>
                     </div>
@@ -81,4 +72,4 @@ const SignUp: React.FunctionComponent = () => {
     )
 };
 
-export default SignUp;
+export default ResetPassword;
