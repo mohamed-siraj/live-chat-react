@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import SignIn from './'
+import SignUp from './';
 
-test('renders sign-in page', () => {
-    render(<SignIn />);
+test('renders sign-up page', () => {
+    render(<SignUp />);
     const linkElement = screen.getByText(/Siraj Chat Bot/i);
     expect(linkElement).toBeInTheDocument();
 });
