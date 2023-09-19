@@ -5,6 +5,7 @@ import SignIn from "../pages/signin";
 import SignUp from "../pages/signup";
 import ForgotPassword from "../pages/forgot-password";
 import ResetPassword from "pages/reset-password";
+import NotFound from "pages/404";
 
 /**
  * create routes
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     {
         path: "/reset-password/:id",
         element: <ResetPassword />
+    },
+    {
+        path: "*",
+        element: <NotFound />
     },
 ]);
 
