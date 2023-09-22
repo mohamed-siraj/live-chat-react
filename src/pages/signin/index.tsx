@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FloraStretchingBallerina } from '../../svg';
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -8,6 +7,7 @@ import Label from "components/forms/label";
 import Input from "components/forms/input";
 import RoundBtn from "components/buttons/roundBtn";
 import SpinnerBtn from "components/buttons/spinnerBtn";
+import { FloraStretchingBallerina } from "assets/svg";
 
 type TSignInForm = {
     username: string,

@@ -1,11 +1,11 @@
 import React from "react"
-import { FloraStretchingBallerina } from "svg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import RoundBtn from "components/buttons/roundBtn";
 import Label from "components/forms/label";
 import Input from "components/forms/input";
+import { FloraStretchingBallerina } from "assets/svg";
 
 type TResetPasswordForm = {
     password: string,

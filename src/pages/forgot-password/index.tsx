@@ -5,8 +5,8 @@ import RoundBtn from "components/buttons/roundBtn";
 import Input from "components/forms/input";
 import Label from "components/forms/label";
 import { Link } from "react-router-dom";
-import { FloraStretchingBallerina } from "svg";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { FloraStretchingBallerina } from "assets/svg";
 
 type TForgotPasswordForm = {
     email: string
