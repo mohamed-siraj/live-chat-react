@@ -11,7 +11,7 @@ module.exports = {
     },
     fontFamily: {
       'sign-in-display': ["Kanit", "sans-serif"],
-    },
+    }
   },
   plugins: [
   ],
