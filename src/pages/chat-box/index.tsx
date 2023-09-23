@@ -1,38 +1,40 @@
-import { Email, Profile, User } from "assets/img";
+import { Profile } from "assets/img";
 import { SirajSvg } from "assets/svg";
 import RoundBtn from "components/buttons/roundBtn";
-import { EllipsisVerticalIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import React from "react";
+import Menu from "./sub-components/menu";
+import SideMenu from "./sub-components/side-menu";
+import AuthUserManage from "./sub-components/auth-user-manage";
+import { useNavigate } from "react-router-dom";
 
 const ChatBox: React.FunctionComponent = () => {
 
+    /**
+     * navigation
+     */
+    const navigate = useNavigate();
+
     return (<>
-        <div className="flex justify-center py-28 ">
+        <div className="flex justify-center pt-20">
             <div className="rounded-l-2xl shadow-2xl bg-white p-8 chat-box" >
                 <div className="flex flex-row">
+                    {/* logo */}
                     <img src={SirajSvg.img} alt={SirajSvg.alt} className="w-16" />
                     <div className="text-purple-800 text-xl ml-3 mt-4"><strong>Siraj Chat Bot</strong></div>
-                    <EllipsisVerticalIcon className="w-7 ml-5 cursor-pointer" />
+                    {/* ellipsis icon menus  */}
+                    <Menu />
                 </div>
-                <div className="flex flex-row mt-7">
-                    <img src={Email.img} alt={Email.alt} className="w-9 h-9" />
-                    <div className="text-md ml-3 mt-1.5"><strong>Messages</strong></div>
-                </div>
-                <div className="flex flex-row mt-7">
-                    <img src={User.img} alt={User.alt} className="w-9 h-9" />
-                    <div className="text-md ml-3 mt-1.5"><strong>Profile</strong></div>
-                </div>
-
+                {/* side menus dynamically load */}
+                <SideMenu />
                 <div className="flex justify-center mt-96">
-                    <RoundBtn name="Twit" type="button" />
+                    {/* post new article or content  */}
+                    <RoundBtn name="Twit" type="button" onClick={() => { navigate('/') }} />
                 </div>
                 <div className="flex flex-row mt-7">
-                    <img src={Profile.img} alt={Profile.alt} className="w-10 h-10" />
-                    <div className="text-md ml-3 mt-1.5">
-                        <strong>Mohamed Siraj</strong><br />
-                        <span className="text-md">@amsiraj94</span>
-                    </div>
+                    {/* authenticated user data manage */}
+                    <AuthUserManage />
                 </div>
 
             </div>
@@ -162,12 +164,16 @@ const ChatBox: React.FunctionComponent = () => {
                             <hr className="mt-3 mb-3" />
                             <div className="flex items-center">
                                 <input placeholder="Write a message...." autoComplete="off" aria-label="Write a message...." className="px-5 py-3 font-semibold w-96 rounded-3xl border-none ring-2 ring-purple-500 focus:ring-purple-800 focus:ring-2 " />
-                                <PaperAirplaneIcon className="w-10 h-10 text-purple-700 cursor-pointer" />
+                                <PaperAirplaneIcon className="w-10 h-10 text-purple-700 cursor-pointer ml-5" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="flex text-base font-semibold justify-center mt-7">
+            <img src={SirajSvg.img} alt={SirajSvg.alt} className="w-16" />
+            <p className="text-white font-sign-in-display text-5xl ml-5">Siraj Chat Bot</p>
         </div>
     </>)
 };
