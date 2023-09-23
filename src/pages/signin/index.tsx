@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -26,6 +26,11 @@ const schema = yup
 
 
 const SignIn: React.FunctionComponent = () => {
+
+    /**
+     * navigation
+     */
+    const navigate = useNavigate();
     /**
      * form handle hooks
      */
@@ -37,7 +42,7 @@ const SignIn: React.FunctionComponent = () => {
      * @description submit user credentials to login 
      */
     const onSubmit: SubmitHandler<TSignInForm> = (data) => {
-        console.log(data)
+        navigate('siraj-chat-bot');
     }
 
     return (

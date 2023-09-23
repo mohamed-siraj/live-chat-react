@@ -13,6 +13,7 @@ module.exports = {
       'sign-in-display': ["Kanit", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
 
