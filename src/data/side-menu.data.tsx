@@ -15,4 +15,4 @@ export const SideMenuData: Array<{
             image: User,
             label: 'Profile'
         }
-    ];
+];

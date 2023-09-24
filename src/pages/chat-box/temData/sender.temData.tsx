@@ -8,7 +8,7 @@ const senderTemData : Array<{
         name : 'Irfan Mubarak',
         user_name : '@irfan256',
         date : '26 Sep 2023',
-        last_message : 'Where are you from.?'
+        last_message : `I've actually been pretty good. You?`
     },
     {
         name : 'Shahira Banu',

@@ -3,8 +3,8 @@ import React from "react";
 const SingleSenderDetail: React.FunctionComponent = () => {
 
     return (<>
-        <strong className="text-md">Mohamed Siraj</strong><br />
-        <span className="text-sm">@amsiraj94</span>
+        <strong className="text-md">Irfan Mubarak</strong><br />
+        <span className="text-sm">@irfan256</span>
     </>);
 };
 

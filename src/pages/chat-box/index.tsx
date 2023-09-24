@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import PeopleFind from "./sub-components/people-find";
 import Sender from "./sub-components/sender";
 import SingleSenderDetail from "./sub-components/single-sender-detail";
+import SingleSenderMessageList from "./sub-components/single-sender-message-list";
 
 const ChatBox: React.FunctionComponent = () => {
 
@@ -65,20 +66,8 @@ const ChatBox: React.FunctionComponent = () => {
                         <hr className="mt-3 mb-4" />
                         <div className="message-box overflow-y-auto">
                             <div className="flex flex-col pr-4 pl-4 ">
-                                <div className="flex flex-row mt-7 w-5/6">
-                                    <img src={Profile.img} alt={Profile.alt} className="w-7 h-7" />
-                                    <div className="text-md ml-3 p-4 bg-blue-400 rounded-xl text-white">
-                                        Hi Im siraj how are you where are you from
-                                    </div>
-                                </div>
-                                <div className="self-end">
-                                    <div className="flex flex-row mt-7">
-                                        <div className="text-md mr-3 p-4 bg-yellow-400 rounded-xl">
-                                            Hi Im siraj how are you where are you from
-                                        </div>
-                                        <img src={Profile.img} alt={Profile.alt} className="w-7 h-7" />
-                                    </div>
-                                </div>
+                                {/* single sender message list */}
+                                <SingleSenderMessageList />
                             </div>
                         </div>
                         <div className=" flex justify-center mt-6">
