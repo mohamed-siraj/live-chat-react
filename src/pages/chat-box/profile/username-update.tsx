@@ -41,7 +41,7 @@ const UsernameUpdate: React.FunctionComponent = () => {
             <div className="mt-5">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Label labelName="Username" error={errors.username} customClass="sm:text-sm mt-2 md:text-lg font-semibold font-sign-in-display" />
-                    <Input placeholder="Username" name="username" error={errors.username} type='password' register={register} required={true} />
+                    <Input placeholder="Username" name="username" error={errors.username} type='text' register={register} required={true} />
                     <div className="text-center mt-4">
                         <RoundBtn name="Change" type='submit' />
                         {/* <SpinnerBtn/> */}
