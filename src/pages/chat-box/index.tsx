@@ -10,6 +10,9 @@ import Sender from "./sub-components/sender";
 import SingleSenderDetail from "./sub-components/single-sender-detail";
 import SingleSenderMessageList from "./sub-components/single-sender-message-list";
 import MessageSend from "./sub-components/message-send";
+import ProfileDetail from "./profile/profile-detail";
+import UpdatePassword from "./profile/update-password";
+import UsernameUpdate from "./profile/username-update";
 
 const ChatBox: React.FunctionComponent = () => {
 
@@ -95,7 +98,41 @@ const ChatBox: React.FunctionComponent = () => {
 
             {/* profile management components */}
             {
-                activate === 'PROFILE' && <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl"></div>
+                activate === 'PROFILE' && <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl">
+                    <div className="flex ">
+                        <div className=" bg-white pt-8 pr-4 border-r-2">
+                            <div className="text-md"><strong>Profile</strong></div>
+                            <hr className="mt-9 mb-5" />
+                            <div className="relative flex items-center ">
+                                <div className="w-96">
+                                    <div className="font-bold">Username : <span className=" font-light">Mohamed Siraj</span></div>
+                                    <div className="font-bold mt-4">Email address : <span className=" font-light">amsiraj94@gmail.com</span></div>
+                                    <div className="font-bold mt-4">Phone number : <span className=" font-light">94756595269</span></div>
+                                    <div className="font-bold mt-4">Address : <span className=" font-light">Eastern province, Batticaloa, Sri Lanka.</span></div>
+
+                                    <div className="mt-40">
+                                        <ProfileDetail />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className="pl-4 bg-white pt-8 w-[34rem]">
+                            {/* particular sender detail */}
+                            <strong className="text-md">Reset Password & Username</strong><br />
+
+                            <hr className="mt-9 mb-1" />
+                            <div className="reset-password-box">
+                                <div className="flex flex-col pr-4 pl-4 ">
+                                    <UpdatePassword />
+                                    <div className="mt-5">
+                                        <UsernameUpdate />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
 
         </div>
