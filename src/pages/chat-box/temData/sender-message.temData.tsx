@@ -4,7 +4,7 @@ enum EOTHER {
     RECEIVER = 'RECEIVER'
 };
 
-type ETOTHER = keyof typeof EOTHER;
+export type ETOTHER = keyof typeof EOTHER;
 
 export const TOTHER = {
     SENDER: 'SENDER',

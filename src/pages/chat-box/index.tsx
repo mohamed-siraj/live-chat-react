@@ -1,8 +1,5 @@
-import { Profile } from "assets/img";
 import { SirajSvg } from "assets/svg";
 import RoundBtn from "components/buttons/round-btn";
-import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
-
 import React from "react";
 import Menu from "./sub-components/menu";
 import SideMenu from "./sub-components/side-menu";
@@ -12,6 +9,7 @@ import PeopleFind from "./sub-components/people-find";
 import Sender from "./sub-components/sender";
 import SingleSenderDetail from "./sub-components/single-sender-detail";
 import SingleSenderMessageList from "./sub-components/single-sender-message-list";
+import MessageSend from "./sub-components/message-send";
 
 const ChatBox: React.FunctionComponent = () => {
 
@@ -42,6 +40,7 @@ const ChatBox: React.FunctionComponent = () => {
                 </div>
 
             </div>
+            {/* chat box & message related components */}
             <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl">
                 <div className="flex ">
                     <div className=" bg-white pt-8 pr-4 border-r-2">
@@ -71,12 +70,9 @@ const ChatBox: React.FunctionComponent = () => {
                             </div>
                         </div>
                         <div className=" flex justify-center mt-6">
-
                             <hr className="mt-3 mb-3" />
-                            <div className="flex items-center">
-                                <input placeholder="Write a message...." autoComplete="off" aria-label="Write a message...." className="px-5 py-3 font-semibold w-96 rounded-3xl border-none ring-2 ring-purple-500 focus:ring-purple-800 focus:ring-2 " />
-                                <PaperAirplaneIcon className="w-10 h-10 text-purple-700 cursor-pointer ml-5" />
-                            </div>
+                            {/* message sender */}
+                            <MessageSend />
                         </div>
                     </div>
                 </div>
