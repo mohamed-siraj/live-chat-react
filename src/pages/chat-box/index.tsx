@@ -1,6 +1,6 @@
 import { SirajSvg } from "assets/svg";
 import RoundBtn from "components/buttons/round-btn";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Menu from "./sub-components/menu";
 import SideMenu from "./sub-components/side-menu";
 import AuthUserManage from "./sub-components/auth-user-manage";
@@ -18,6 +18,18 @@ const ChatBox: React.FunctionComponent = () => {
      */
     const navigate = useNavigate();
 
+    /**
+     * local state management
+     */
+    const [activate, setActivate] = useState<string>('');
+
+    /**
+     * active manage 
+     */
+    const active = useCallback((activate: string) => {
+        setActivate(activate);
+    }, []);
+
     return (<>
         <div className="flex justify-center pt-20">
             <div className="rounded-l-2xl shadow-2xl bg-white p-8 chat-box" >
@@ -29,7 +41,7 @@ const ChatBox: React.FunctionComponent = () => {
                     <Menu />
                 </div>
                 {/* side menus dynamically load */}
-                <SideMenu />
+                <SideMenu active={active} />
                 <div className="flex justify-center mt-96">
                     {/* post new article or content  */}
                     <RoundBtn name="Twit" type="button" onClick={() => { navigate('/') }} />
@@ -40,45 +52,52 @@ const ChatBox: React.FunctionComponent = () => {
                 </div>
 
             </div>
-            {/* chat box & message related components */}
-            <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl">
-                <div className="flex ">
-                    <div className=" bg-white pt-8 pr-4 border-r-2">
-                        <div className="text-md"><strong>Messages</strong></div>
-                        <hr className="mt-9 mb-5" />
-                        <div className="relative flex items-center">
-                            {/* people find search  */}
-                            <PeopleFind />
-                        </div>
-                        <div className="mt-2 list-box overflow-y-auto">
-                            <hr className="mt-4 mb-4" />
-                            <div className="pr-4">
-                                {/* sender or user list  */}
-                                <Sender />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="pl-4 bg-white pt-8 w-[34rem]">
-                        {/* particular sender detail */}
-                        <SingleSenderDetail />
 
-                        <hr className="mt-3 mb-4" />
-                        <div className="message-box overflow-y-auto">
-                            <div className="flex flex-col pr-4 pl-4 ">
-                                {/* single sender message list */}
-                                <SingleSenderMessageList />
+            {/* chat box & message related components */}
+            {
+                activate === 'MESSAGE' && <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl">
+                    <div className="flex ">
+                        <div className=" bg-white pt-8 pr-4 border-r-2">
+                            <div className="text-md"><strong>Messages</strong></div>
+                            <hr className="mt-9 mb-5" />
+                            <div className="relative flex items-center">
+                                {/* people find search  */}
+                                <PeopleFind />
+                            </div>
+                            <div className="mt-2 list-box overflow-y-auto">
+                                <hr className="mt-4 mb-4" />
+                                <div className="pr-4">
+                                    {/* sender or user list  */}
+                                    <Sender />
+                                </div>
                             </div>
                         </div>
-                        <div className=" flex justify-center mt-6">
-                            <hr className="mt-3 mb-3" />
-                            {/* message sender */}
-                            <MessageSend />
+                        <div className="pl-4 bg-white pt-8 w-[34rem]">
+                            {/* particular sender detail */}
+                            <SingleSenderDetail />
+
+                            <hr className="mt-3 mb-4" />
+                            <div className="message-box overflow-y-auto">
+                                <div className="flex flex-col pr-4 pl-4 ">
+                                    {/* single sender message list */}
+                                    <SingleSenderMessageList />
+                                </div>
+                            </div>
+                            <div className=" flex justify-center mt-6">
+                                <hr className="mt-3 mb-3" />
+                                {/* message sender */}
+                                <MessageSend />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
 
-            
+            {/* profile management components */}
+            {
+                activate === 'PROFILE' && <div className="shadow-2xl bg-white pl-8 pb-8 pr-8 chat-box w-6/12 rounded-r-2xl"></div>
+            }
+
         </div>
         <div className="flex text-base font-semibold justify-center mt-7">
             <img src={SirajSvg.img} alt={SirajSvg.alt} className="w-16" />

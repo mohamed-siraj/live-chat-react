@@ -1,13 +1,24 @@
 import { SideMenuData } from "data/side-menu.data";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const SideMenu: React.FunctionComponent = () => {
+type TSideMenu = {
+    active: (activate: string) => void
+};
+
+const SideMenu: React.FunctionComponent<TSideMenu> = ({ active }) => {
 
     /**
      * local state management
      */
 
-    const [activate, setActivate] = useState('MESSAGE');
+    const [activate, setActivate] = useState<string>('MESSAGE');
+
+    /**
+     * react side effect  
+     */
+    useEffect(() => {
+        active(activate);
+    }, [activate, active]);
 
     return (<>
         {
