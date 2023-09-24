@@ -77,6 +77,8 @@ const ChatBox: React.FunctionComponent = () => {
                     </div>
                 </div>
             </div>
+
+            
         </div>
         <div className="flex text-base font-semibold justify-center mt-7">
             <img src={SirajSvg.img} alt={SirajSvg.alt} className="w-16" />
