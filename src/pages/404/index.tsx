@@ -1,4 +1,4 @@
-import RoundBtn from "components/buttons/roundBtn";
+import RoundBtn from "components/buttons/round-btn";
 import React from "react";
 import { Link } from "react-router-dom";
 

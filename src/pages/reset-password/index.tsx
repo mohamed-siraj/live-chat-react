@@ -2,7 +2,7 @@ import React from "react"
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
-import RoundBtn from "components/buttons/roundBtn";
+import RoundBtn from "components/buttons/round-btn";
 import Label from "components/forms/label";
 import Input from "components/forms/input";
 import { FloraStretchingBallerina } from "assets/svg";

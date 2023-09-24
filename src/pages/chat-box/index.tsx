@@ -1,6 +1,6 @@
 import { Profile } from "assets/img";
 import { SirajSvg } from "assets/svg";
-import RoundBtn from "components/buttons/roundBtn";
+import RoundBtn from "components/buttons/round-btn";
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
 
 import React from "react";
@@ -10,7 +10,7 @@ import AuthUserManage from "./sub-components/auth-user-manage";
 import { useNavigate } from "react-router-dom";
 import PeopleFind from "./sub-components/people-find";
 import Sender from "./sub-components/sender";
-import SingleSenderDetail from "./sub-components/singleSenderDetail";
+import SingleSenderDetail from "./sub-components/single-sender-detail";
 
 const ChatBox: React.FunctionComponent = () => {
 

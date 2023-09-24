@@ -1,7 +1,7 @@
 import React from "react"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import RoundBtn from "components/buttons/roundBtn";
+import RoundBtn from "components/buttons/round-btn";
 import Input from "components/forms/input";
 import Label from "components/forms/label";
 import { Link } from "react-router-dom";

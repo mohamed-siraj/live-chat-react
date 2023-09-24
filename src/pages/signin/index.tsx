@@ -5,8 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import Label from "components/forms/label";
 import Input from "components/forms/input";
-import RoundBtn from "components/buttons/roundBtn";
-import SpinnerBtn from "components/buttons/spinnerBtn";
+import RoundBtn from "components/buttons/round-btn";
+import SpinnerBtn from "components/buttons/spinner-btn";
 import { FloraStretchingBallerina } from "assets/svg";
 
 type TSignInForm = {

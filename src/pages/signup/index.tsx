@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Label from "components/forms/label";
 import Input from "components/forms/input";
-import RoundBtn from "components/buttons/roundBtn";
+import RoundBtn from "components/buttons/round-btn";
 import { Link } from "react-router-dom";
 import { FloraStretchingBallerina } from "assets/svg";
 
